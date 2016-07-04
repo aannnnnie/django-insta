@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Girls</title>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" style="padding:15px; border-bottom:2px solid #F69433;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{% url 'user' pk=user.id %}"><img src="{% static 'images/logo.png' %}" alt="Django Girls Logo"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{% url 'create-post' %}">Загрузить новую картинку</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'user' pk=user.id %}">Hello, {{ user.username }}!</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}"><i class="glyphicon glyphicon-log-out"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block section %}
+
+
+{% endblock %}
+
+</body>
+</html>
